@@ -35,7 +35,7 @@ final class ExtensionHelper
 
         foreach ($typeClassMapping as $idClass => $typeClass) {
             /** @psalm-suppress DeprecatedConstant */
-            $type = $idTypeMapping[$idClass] ?? DoctrineType::INTEGER;
+            $type = $idTypeMapping[$idClass] ?? 'integer';
 
             if (isset($uuidMapping[$type])) {
                 if (!class_exists($uuidClass = $uuidMapping[$type])) {
