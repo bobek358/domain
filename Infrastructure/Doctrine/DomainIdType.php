@@ -51,7 +51,7 @@ abstract class DomainIdType extends Type
     final public static function getDataType(): string
     {
         /** @psalm-suppress DeprecatedConstant */
-        return self::$mapping[static::class]['data_type'] ?? Type::INTEGER;
+        return self::$mapping[static::class]['data_type'] ?? 'integer';
     }
 
     /**
@@ -96,7 +96,7 @@ abstract class DomainIdType extends Type
         if ($value instanceof DomainId) {
             $class = \get_class($value);
             /** @psalm-suppress DeprecatedConstant */
-            $type = Type::INTEGER;
+            $type = 'integer';
 
             foreach (self::$mapping as $mapping) {
                 if (($mapping['class'] ?? null) === $class) {
